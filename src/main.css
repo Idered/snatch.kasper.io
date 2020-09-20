@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fa-primary {
+  fill: theme("colors.blue.700");
+}
+
+.fa-secondary {
+  fill: theme("colors.blue.500");
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "icon title"
+    ". content";
+  @apply gap-x-4 gap-y-1 w-full;
+}
+
+.feature--tbd {
+  grid-template-columns: theme("spacing.6") 1fr;
+  grid-template-areas:
+    ". title"
+    ". content";
+}
+
+.feature__icon {
+  grid-area: icon;
+  align-self: center;
+  @apply w-6 h-6;
+}
+
+.feature__title {
+  grid-area: title;
+  @apply uppercase tracking-wide font-bold text-cool-gray-800;
+}
+
+.feature__content {
+  grid-area: content;
+  @apply w-full;
+}
